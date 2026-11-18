@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Kasper College - Vanilla JavaScript Interactivity & Accessibility Enhancements
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -53,9 +52,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-=======
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
->>>>>>> c02d0b519319d5054ac35f57b16d7759e5ed3101
