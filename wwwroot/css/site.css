@@ -1,8 +1,3 @@
-/* ==========================================================================
-   Kasper College - Custom Mobile-First Stylesheet (Zero CSS Frameworks)
-   Brand Tokens from Suggested-branding-style.docx
-   ========================================================================== */
-
 :root {
     --deep-blue: #0A437C;
     --deep-blue-dark: #073360;
@@ -72,7 +67,6 @@ a {
     text-underline-offset: 3px;
 }
 
-/* Pseudo-classes for interactive feedback and WCAG 2.2 AA focus rings */
 a:hover {
     color: var(--deep-blue-dark);
 }
@@ -86,7 +80,7 @@ textarea:focus-visible {
     outline-offset: 2px;
 }
 
-/* Skip Link for Keyboard / Screen Reader Accessibility */
+/* Skip Link / Screen Reader Accessibility */
 .skip-link {
     position: absolute;
     left: -9999px;
@@ -111,15 +105,14 @@ textarea:focus-visible {
     padding: 0 1rem;
 }
 
-/* 2. ID Selectors & Sticky Glassmorphic Header */
+/* 2. ID Selectors & Sticky Midnight-Navy Header matching college logo */
 #site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    border-bottom: 1px solid var(--border-grey);
+    background-color: #06051E;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    border-bottom: 2px solid var(--accent-gold);
 }
 
 .header-inner {
@@ -149,16 +142,17 @@ textarea:focus-visible {
 .brand-text {
     display: flex;
     flex-direction: column;
-    color: var(--deep-blue);
+    color: var(--pure-white);
 }
 
 .brand-text strong {
     font-size: 1.15rem;
+    color: var(--pure-white);
 }
 
 .brand-text small {
     font-size: 0.8rem;
-    color: var(--slate-navy);
+    color: #CBD5E1;
 }
 
 /* Mobile Menu Button (44px minimum touch target) */
@@ -166,11 +160,11 @@ textarea:focus-visible {
     min-width: 44px;
     min-height: 44px;
     padding: 0.6rem 1rem;
-    background-color: var(--deep-blue);
-    color: var(--pure-white);
+    background-color: var(--accent-gold);
+    color: var(--slate-navy);
     border: none;
     border-radius: 6px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
 }
@@ -200,13 +194,13 @@ textarea:focus-visible {
     padding: 0.5rem 0.75rem;
     text-decoration: none;
     font-weight: 600;
-    color: var(--slate-navy);
+    color: var(--pure-white);
     border-radius: 6px;
 }
 
 .nav-list a:hover {
-    background-color: var(--light-grey);
-    color: var(--deep-blue);
+    background-color: rgba(255, 255, 255, 0.12);
+    color: var(--accent-gold);
 }
 
 .nav-list a.nav-cta {
@@ -216,8 +210,8 @@ textarea:focus-visible {
 
 .nav-list a.nav-cta:hover {
     background-color: var(--accent-gold-dark);
+    color: var(--slate-navy);
 }
-
 /* 3. Hero Banner & Page Banners */
 #hero-banner {
     background-color: var(--slate-navy);
