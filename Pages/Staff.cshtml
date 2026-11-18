@@ -1,0 +1,141 @@
+@page
+@model StaffModel
+@{
+    ViewData["Title"] = "Information for Staff";
+}
+
+<section class="page-banner">
+    <div class="container">
+        <h1>Kasper College Staff Portal &amp; Faculty Information</h1>
+        <p>Official Guidance, Academic Administration, IT Services, HR Policies, and Campus Facilities for Staff.</p>
+    </div>
+</section>
+
+<section class="section-block" aria-labelledby="staff-news">
+    <div class="container">
+        <h2 id="staff-news">1. News &amp; College Announcements</h2>
+        <div class="grid-cards">
+            <article class="card">
+                <h3>Software Engineering Student of the Year Awards</h3>
+                <p>Kasper College recently hosted the annual National Software Engineering Student of the Year Awards in the Main Lecture Theatre. Shortlisted candidates from 24 institutions nationwide attended the one-day symposium and showcase.</p>
+            </article>
+            <article class="card">
+                <h3>&pound;1.2M High-Performance Computing Grant</h3>
+                <p>The Department of Computing &amp; Digital Technologies has been awarded &pound;1.2 million from the Engineering and Physical Sciences Research Council (EPSRC) to install a cutting-edge GPU cluster dedicated to AI ethics and edge-computing research.</p>
+            </article>
+            <article class="card">
+                <h3>National Teaching Fellowships</h3>
+                <p>Congratulations to Dr. Sarah Jenkins (Senior Lecturer in Cyber Security) and Prof. David Chen (Reader in Interactive Media) on being awarded National Teaching Fellowships for pedagogical innovation.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section-block section-alt" aria-labelledby="staff-admin">
+    <div class="container two-col">
+        <article class="card">
+            <h2 id="staff-admin">2. Academic Registry &amp; Quality Assurance</h2>
+            <p>The Academic Registry oversees academic regulations, assessment standards, student records, module evaluation, and course validation.</p>
+            <ul>
+                <li><strong>Assessment &amp; Moderation:</strong> All summative assessment briefs must undergo internal peer moderation 4 weeks prior to release. Sample scripts (10% or minimum 6 scripts) must be submitted for external examiner scrutiny.</li>
+                <li><strong>Grade Submission Deadlines:</strong> Autumn semester module results must be finalized on the Student Records System (SRS) by 17:00 on Friday, 22 January 2027.</li>
+                <li><strong>Extenuating Circumstances &amp; Academic Appeals:</strong> Faculty panels review claims weekly. Staff should direct distressed students to the Student Support Desk for initial evidence validation.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>3. Human Resources, Payroll &amp; Staff Wellbeing</h2>
+            <ul>
+                <li><strong>HR Service Portal:</strong> Staff can access monthly payslips, P60s, annual leave booking (35 days plus bank holidays), and sickness reporting via the internal PeopleHR portal.</li>
+                <li><strong>Employee Assistance Programme (EAP):</strong> Free 24/7 confidential counseling, financial advice, and mental health support available to all permanent and fixed-term staff via HealthAssured (Freephone: 0800 030 5182).</li>
+                <li><strong>Staff Development Fund:</strong> Full-time faculty are eligible for up to &pound;1,500 annually toward conference attendance, professional certifications (e.g., AWS, Cisco, Adobe), and academic journal publication fees.</li>
+                <li><strong>Cycle-to-Work &amp; EV Salary Sacrifice:</strong> Tax-free bicycle purchases and electric vehicle leasing schemes available through the HR Benefits hub.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>4. IT Services &amp; Classroom Technology Support</h2>
+            <ul>
+                <li><strong>Single Sign-On (SSO) &amp; MFA:</strong> All staff accounts require Microsoft Authenticator multi-factor authentication for logging into campus systems and remote VPN access.</li>
+                <li><strong>Moodle VLE &amp; Panopto Lecture Capture:</strong> All lecture theatres and seminar rooms feature automated recording. Course materials and reading lists must be populated 2 weeks before teaching commences.</li>
+                <li><strong>Classroom AV Hotline:</strong> Immediate in-class technical assistance is available by dialing extension 2222 from any lectern telephone.</li>
+                <li><strong>Software Licenses:</strong> Staff may request specialized software installations for teaching labs by submitting an IT Helpdesk ticket at least 15 working days prior to term start.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>5. Room Bookings, 6. Health &amp; Safety, 7. Catering</h2>
+            <ul>
+                <li><strong>Timetabled Teaching Rooms:</strong> Managed centrally by the Academic Timetabling Team. Ad-hoc bookings for extra tutorials or student workshops can be made via the Resource Scheduler system.</li>
+                <li><strong>Specialist Computing Labs:</strong> SOC labs, VR suites, and maker workshops require certified technician supervision when booked outside standard timetable hours.</li>
+                <li><strong>Conference &amp; Meeting Rooms:</strong> The Boardroom (Room 302) and Executive Suite (Room 305) can be reserved via Outlook calendar invites.</li>
+                <li><strong>Emergency Numbers:</strong> Campus Security &amp; First Aid Emergency: dial 3333 (Internal) or (01321) 2340 333.</li>
+                <li><strong>Fire Alarm Testing:</strong> Conducted every Tuesday at 08:45. Evacuate immediately via the nearest fire exit to Assembly Point A (Main Campus Plaza) or Point B (West Car Park).</li>
+                <li><strong>Display Screen Equipment (DSE):</strong> All staff must complete an annual DSE self-assessment to ensure ergonomic workstation setup.</li>
+                <li><strong>Catering &amp; Hospitality Bookings:</strong> Contact Catering Services (<a href="mailto:catering@kaspercollege.ac.uk">catering@kaspercollege.ac.uk</a>) at least 48 hours in advance.</li>
+            </ul>
+        </article>
+    </div>
+</section>
+
+<section class="section-block" aria-labelledby="staff-directory">
+    <div class="container">
+        <h2 id="staff-directory">Staff Directory &amp; Key Contacts</h2>
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Role / Department</th>
+                        <th>Contact Name / Team</th>
+                        <th>Email</th>
+                        <th>Extension</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Principal &amp; CEO</td>
+                        <td>Dr. Marcus Vance</td>
+                        <td><a href="mailto:principal@kaspercollege.ac.uk">principal@kaspercollege.ac.uk</a></td>
+                        <td>2001</td>
+                    </tr>
+                    <tr>
+                        <td>Dean of Computing</td>
+                        <td>Prof. Aris Thorne</td>
+                        <td><a href="mailto:a.thorne@kaspercollege.ac.uk">a.thorne@kaspercollege.ac.uk</a></td>
+                        <td>2100</td>
+                    </tr>
+                    <tr>
+                        <td>Dean of Art &amp; Design</td>
+                        <td>Prof. Claire Montgomery</td>
+                        <td><a href="mailto:c.montgomery@kaspercollege.ac.uk">c.montgomery@kaspercollege.ac.uk</a></td>
+                        <td>2150</td>
+                    </tr>
+                    <tr>
+                        <td>Academic Registry</td>
+                        <td>Registry Services</td>
+                        <td><a href="mailto:registry@kaspercollege.ac.uk">registry@kaspercollege.ac.uk</a></td>
+                        <td>2240</td>
+                    </tr>
+                    <tr>
+                        <td>IT Helpdesk (Staff)</td>
+                        <td>IT Support Team</td>
+                        <td><a href="mailto:ithelpdesk@kaspercollege.ac.uk">ithelpdesk@kaspercollege.ac.uk</a></td>
+                        <td>2222</td>
+                    </tr>
+                    <tr>
+                        <td>Human Resources</td>
+                        <td>HR Advisory Hub</td>
+                        <td><a href="mailto:hr@kaspercollege.ac.uk">hr@kaspercollege.ac.uk</a></td>
+                        <td>2280</td>
+                    </tr>
+                    <tr>
+                        <td>Estates &amp; Facilities</td>
+                        <td>Helpdesk Estates</td>
+                        <td><a href="mailto:estates@kaspercollege.ac.uk">estates@kaspercollege.ac.uk</a></td>
+                        <td>2300</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

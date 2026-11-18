@@ -1,0 +1,694 @@
+/* ==========================================================================
+   Kasper College - Custom Mobile-First Stylesheet (Zero CSS Frameworks)
+   Brand Tokens from Suggested-branding-style.docx
+   ========================================================================== */
+
+:root {
+    --deep-blue: #0A437C;
+    --deep-blue-dark: #073360;
+    --accent-gold: #F1A93B;
+    --accent-gold-dark: #D98C1F;
+    --slate-navy: #1E293B;
+    --text-dark: #333333;
+    --light-grey: #F5F5F5;
+    --pure-white: #FFFFFF;
+    --border-grey: #CBD5E1;
+    --success-green: #10B981;
+    --alert-coral: #EF4444;
+    --max-width: 1280px;
+}
+
+/* 1. Element Selectors & Base Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--pure-white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: var(--deep-blue);
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--slate-navy);
+}
+
+a {
+    color: var(--deep-blue);
+    text-underline-offset: 3px;
+}
+
+/* Pseudo-classes for interactive feedback and WCAG 2.2 AA focus rings */
+a:hover {
+    color: var(--deep-blue-dark);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* Skip Link for Keyboard / Screen Reader Accessibility */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0.5rem;
+    background: var(--accent-gold);
+    color: var(--slate-navy);
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    z-index: 2000;
+    border-radius: 6px;
+}
+
+.skip-link:focus {
+    left: 0.5rem;
+}
+
+/* Layout Container */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* 2. ID Selectors & Sticky Glassmorphic Header */
+#site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid var(--border-grey);
+}
+
+.header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+    gap: 0.75rem;
+}
+
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    padding: 0.25rem;
+}
+
+.brand-logo {
+    min-width: 65px;
+    width: 65px;
+    height: auto;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    color: var(--deep-blue);
+}
+
+.brand-text strong {
+    font-size: 1.15rem;
+}
+
+.brand-text small {
+    font-size: 0.8rem;
+    color: var(--slate-navy);
+}
+
+/* Mobile Menu Button (44px minimum touch target) */
+.menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+    background-color: var(--deep-blue);
+    color: var(--pure-white);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.primary-nav {
+    display: none;
+    width: 100%;
+}
+
+.primary-nav.is-open {
+    display: block;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nav-list a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--slate-navy);
+    border-radius: 6px;
+}
+
+.nav-list a:hover {
+    background-color: var(--light-grey);
+    color: var(--deep-blue);
+}
+
+.nav-list a.nav-cta {
+    background-color: var(--accent-gold);
+    color: var(--slate-navy);
+}
+
+.nav-list a.nav-cta:hover {
+    background-color: var(--accent-gold-dark);
+}
+
+/* 3. Hero Banner & Page Banners */
+#hero-banner {
+    background-color: var(--slate-navy);
+    background-image: linear-gradient(rgba(10, 67, 124, 0.86), rgba(30, 41, 59, 0.9)), url('../images/mobilebg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--pure-white);
+    padding: 3.5rem 0;
+}
+
+#hero-banner h1 {
+    color: var(--pure-white);
+    margin-bottom: 1rem;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--slate-navy);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.hero-lead {
+    font-size: 1.1rem;
+    max-width: 65ch;
+    margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.page-banner {
+    background-color: var(--deep-blue);
+    color: var(--pure-white);
+    padding: 2.5rem 0;
+}
+
+.page-banner h1 {
+    color: var(--pure-white);
+    margin-bottom: 0.5rem;
+}
+
+.page-banner p {
+    max-width: 70ch;
+    margin-bottom: 0.75rem;
+}
+
+/* 4. Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.75rem 1.4rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+
+.btn-primary {
+    background-color: var(--deep-blue);
+    color: var(--pure-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--deep-blue-dark);
+    color: var(--pure-white);
+}
+
+.btn-gold {
+    background-color: var(--accent-gold);
+    color: var(--slate-navy);
+}
+
+.btn-gold:hover {
+    background-color: var(--accent-gold-dark);
+    color: var(--slate-navy);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--deep-blue);
+    color: var(--deep-blue);
+}
+
+.btn-outline:hover {
+    background-color: var(--deep-blue);
+    color: var(--pure-white);
+}
+
+.btn-outline-light {
+    background-color: transparent;
+    border-color: var(--pure-white);
+    color: var(--pure-white);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--pure-white);
+    color: var(--deep-blue);
+}
+
+.btn-danger {
+    background-color: #B91C1C;
+    color: var(--pure-white);
+}
+
+.btn-danger:hover {
+    background-color: #991B1B;
+    color: var(--pure-white);
+}
+
+.btn-small {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.9rem;
+}
+
+/* 5. Sections, Grids & Cards */
+.section-block {
+    padding: 2.75rem 0;
+}
+
+.section-alt {
+    background-color: var(--light-grey);
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--pure-white);
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08);
+}
+
+.card-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.stat-card h3 {
+    font-size: 1.75rem;
+    color: var(--deep-blue);
+    margin-bottom: 0.35rem;
+}
+
+.principal-quote {
+    margin: 0 0 1rem;
+    padding: 1rem;
+    border-left: 4px solid var(--accent-gold);
+    background-color: var(--light-grey);
+    font-style: italic;
+}
+
+.media-figure {
+    margin: 1rem 0 0;
+}
+
+.media-figure img {
+    border-radius: 10px;
+}
+
+.media-figure figcaption {
+    font-size: 0.875rem;
+    color: #475569;
+    margin-top: 0.5rem;
+}
+
+/* 6. Tables & Attribute Selectors */
+.table-wrapper {
+    overflow-x: auto;
+    background-color: var(--pure-white);
+    border: 1px solid var(--border-grey);
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #E2E8F0;
+    vertical-align: top;
+}
+
+.data-table th {
+    background-color: var(--deep-blue);
+    color: var(--pure-white);
+    font-weight: 600;
+}
+
+/* Pseudo-class :nth-child for zebra striping */
+.data-table tbody tr:nth-child(even) {
+    background-color: #F8FAFC;
+}
+
+/* Attribute Selectors for Course Recruitment Status */
+tr[data-status="closed"] {
+    background-color: #FEF2F2;
+}
+
+tr[data-status="open"] td:first-child {
+    border-left: 4px solid var(--success-green);
+}
+
+.table-subtext {
+    font-size: 0.875rem;
+    color: #475569;
+    margin-top: 0.25rem;
+}
+
+.action-cell {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.badge-open {
+    background-color: #D1FAE5;
+    color: #065F46;
+}
+
+.badge-closed {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+/* 7. Forms & Attribute Selectors */
+.form-container {
+    max-width: 720px;
+}
+
+.kasper-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--slate-navy);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    min-height: 44px;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #94A3B8;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Attribute selector highlighting required inputs */
+input[required],
+textarea[required] {
+    border-left: 4px solid var(--deep-blue);
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 44px;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.field-error {
+    color: #B91C1C;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.alert-success {
+    background-color: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #10B981;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* ReactJS Interactive Filter Controls */
+.react-controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    background-color: var(--light-grey);
+    padding: 1.25rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-grey);
+    margin-bottom: 1.25rem;
+}
+
+/* 8. Footer */
+#site-footer {
+    background-color: var(--slate-navy);
+    color: var(--pure-white);
+    padding-top: 2.5rem;
+}
+
+#site-footer h2 {
+    color: var(--accent-gold);
+    font-size: 1.2rem;
+}
+
+#site-footer a {
+    color: var(--pure-white);
+}
+
+#site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#site-footer li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   9. Responsive Media Queries (Mobile-First -> Tablet 768px -> Desktop 1024px)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.85rem;
+    }
+
+    .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .two-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .react-controls {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .brand-logo {
+        min-width: 120px;
+        width: 120px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .primary-nav {
+        display: block;
+        width: auto;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        align-items: center;
+        margin-top: 0;
+        gap: 0.35rem;
+    }
+
+    #hero-banner {
+        background-image: linear-gradient(rgba(10, 67, 124, 0.85), rgba(30, 41, 59, 0.88)), url('../images/desktopbg.jpg');
+        padding: 5rem 0;
+    }
+
+    .grid-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

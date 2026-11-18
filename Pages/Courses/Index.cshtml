@@ -1,0 +1,89 @@
+@page
+@model MyRazorApp.Pages.Courses.IndexModel
+@{
+    ViewData["Title"] = "Courses (2027/28)";
+}
+
+<section class="page-banner">
+    <div class="container">
+        <h1>2027/28 Course Catalogue</h1>
+        <p>
+            Explore all undergraduate and postgraduate programmes across Computing and Art &amp; Design.
+            Powered by ASP.NET Core Razor Pages, SQLite, and ReactJS.
+        </p>
+        <p>
+            <a asp-page="Create" class="btn btn-gold">+ Add New Course (CRUD)</a>
+        </p>
+    </div>
+</section>
+
+<section class="section-block" aria-labelledby="react-explorer-heading">
+    <div class="container">
+        <h2 id="react-explorer-heading">Interactive Course Finder (ReactJS)</h2>
+        <p>Filter courses live by subject area, study level, or keyword without reloading the page:</p>
+
+        <div id="react-course-app" data-courses='@Html.Raw(Model.CoursesJson)'>
+            <p>Loading interactive course finder...</p>
+        </div>
+    </div>
+</section>
+
+<section class="section-block section-alt" aria-labelledby="db-table-heading">
+    <div class="container">
+        <h2 id="db-table-heading">Full Database Course Table (SQLite CRUD)</h2>
+        <p>Showing all <strong>@Model.Courses.Count</strong> records currently stored in <code>kaspercollege.db</code>.</p>
+
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Course Title</th>
+                        <th>Award</th>
+                        <th>Subject</th>
+                        <th>Level</th>
+                        <th>UCAS</th>
+                        <th>Points</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Courses)
+                    {
+                        <tr data-status="@(item.NoLongerRecruiting ? "closed" : "open")">
+                            <td>
+                                <strong>@item.CourseTitle</strong>
+                                <div class="table-subtext">@item.CourseSummary</div>
+                            </td>
+                            <td>@item.CourseAwardName</td>
+                            <td>@item.CourseSubject</td>
+                            <td>@item.CourseType (@item.StudyLength, @item.ModeOfAttendance)</td>
+                            <td>@(string.IsNullOrEmpty(item.UcasCode) ? "N/A" : item.UcasCode)</td>
+                            <td>@(item.UcasPoints.HasValue ? item.UcasPoints.Value.ToString() : "N/A")</td>
+                            <td>
+                                @if (item.NoLongerRecruiting)
+                                {
+                                    <span class="badge badge-closed">No Longer Recruiting</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-open">Open (2027/28)</span>
+                                }
+                            </td>
+                            <td class="action-cell">
+                                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-small btn-outline">Edit</a>
+                                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-small btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="~/js/courses-react.js" asp-append-version="true"></script>
+}

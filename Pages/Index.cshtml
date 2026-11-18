@@ -1,0 +1,223 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section id="hero-banner" class="hero-section">
+    <div class="container hero-content">
+        <p class="hero-eyebrow">Computing &bull; Design &bull; Networking</p>
+        <h1>Where Innovation Meets Craftsmanship</h1>
+        <p class="hero-lead">
+            Established in 1989 in central Sheffield, Kasper College equips students with the knowledge,
+            technical prowess, and creative problem-solving skills required to succeed in a rapidly evolving global market.
+        </p>
+        <div class="hero-actions">
+            <a asp-page="/Courses/Index" class="btn btn-gold">Explore 2027/28 Courses</a>
+            <a asp-page="/Business" class="btn btn-outline-light">Partner With Us</a>
+        </div>
+    </div>
+</section>
+
+<section class="section-block" aria-labelledby="stats-heading">
+    <div class="container">
+        <h2 id="stats-heading">Key Facts &amp; Statistics</h2>
+        <div class="grid-cards stats-grid">
+            <article class="card stat-card">
+                <h3>9,500 m&sup2;</h3>
+                <p>Of modern, purpose-built educational space in central Sheffield.</p>
+            </article>
+            <article class="card stat-card">
+                <h3>1,600+ Students</h3>
+                <p>Undergraduate and postgraduate students from more than 40 countries.</p>
+            </article>
+            <article class="card stat-card">
+                <h3>240+ Staff</h3>
+                <p>Dedicated academic faculty, industry-fellow lecturers, and specialized technical support staff.</p>
+            </article>
+            <article class="card stat-card">
+                <h3>96% Employability</h3>
+                <p>Graduates in professional employment or further study within six months of graduation.</p>
+            </article>
+            <article class="card stat-card">
+                <h3>&pound;4.5 Million</h3>
+                <p>Recently invested in state-of-the-art GPU clusters, cybersecurity cyber ranges, and VR/AR immersive labs.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section-block section-alt" aria-labelledby="about-heading">
+    <div class="container two-col">
+        <div>
+            <h2 id="about-heading">About Kasper College</h2>
+            <p>
+                Kasper College was established in 1989 to specialize in Computing, Design, and Digital Technologies.
+                Over the past three decades, we have evolved into one of the region's premier technical and creative education hubs.
+                At Kasper College, we are dedicated to providing students with the education, hands-on experience, and industry exposure
+                they need to achieve their career aspirations.
+            </p>
+            <p>
+                Our close integration with leading technology firms, software houses, creative agencies, and regional enterprises
+                provides students with direct industry pathways, live commercial briefs, and invaluable placement opportunities.
+                Kasper College gives you the definitive edge when entering the professional world.
+            </p>
+            <figure class="media-figure">
+                <img src="~/images/image1.jpg" alt="Students collaborating inside Kasper College campus atrium" />
+                <figcaption>Purpose-built collaborative learning spaces at Kasper College, Sheffield.</figcaption>
+            </figure>
+        </div>
+
+        <aside class="card principal-card" aria-labelledby="principal-heading">
+            <h3 id="principal-heading">Principal's Welcome</h3>
+            <blockquote class="principal-quote">
+                "Welcome to Kasper College. Whether you are stepping into higher education for the first time, advancing your skills
+                through postgraduate study, or collaborating with us as an industry partner, Kasper College offers an exceptional community
+                of passionate educators, researchers, and creators. Our campus in Sheffield has been purposefully designed to foster collaboration
+                between computing specialists and creative designers&mdash;mirroring the modern digital economy. We look forward to supporting you on your journey to excellence."
+            </blockquote>
+            <p><strong>Dr. Marcus Vance</strong>, Principal &amp; CEO</p>
+
+            <h3>Our Mission, Vision &amp; Core Values</h3>
+            <ul>
+                <li><strong>Mission:</strong> To empower students from all backgrounds through inspiring teaching, cutting-edge technical facilities, and innovative research in computing, networking, and creative design.</li>
+                <li><strong>Vision:</strong> To be recognised globally as a benchmark institution where technology meets creativity, preparing ethical, skilled, and visionary digital leaders.</li>
+                <li><strong>Innovation &amp; Exploration:</strong> We cultivate curiosity, experimentation, and critical thinking across digital and creative domains.</li>
+                <li><strong>Industry Relevance:</strong> Every course is built in consultation with industry partners to ensure curriculum alignment with modern tech stacks and workplace practices.</li>
+                <li><strong>Inclusivity &amp; Community:</strong> We champion diversity, accessibility, and mutual support across our vibrant campus.</li>
+            </ul>
+        </aside>
+    </div>
+</section>
+
+<section class="section-block" aria-labelledby="departments-heading">
+    <div class="container">
+        <h2 id="departments-heading">Academic Departments &amp; Course Pathways</h2>
+        <div class="grid-cards two-col">
+            <article class="card">
+                <img src="~/images/image2.jpg" alt="High-performance computing workstation setup" class="card-img" />
+                <h3>1. Department of Computing &amp; Digital Technologies</h3>
+                <p>
+                    The Department of Computing offers a comprehensive spectrum of undergraduate, postgraduate, and foundation programmes
+                    designed to suit applicants with diverse educational backgrounds. Whether you aim to build scalable distributed architectures,
+                    secure critical infrastructure against cyber threats, or engineer engaging game engines, our courses combine deep theoretical rigor with industry-standard tooling.
+                </p>
+                <ul>
+                    <li><strong>Core Computing Disciplines:</strong> Computer Science, Software Engineering, Cyber Security with Forensics, Computer Networks, and Computer Science for Games.</li>
+                    <li><strong>Postgraduate Programmes:</strong> MSc Computing (conversion pathway for non-computing graduates), MSc Cyber Security, and MPhil Computing and Informatics.</li>
+                    <li><strong>Foundation Years:</strong> Dedicated 4-year programmes providing foundational maths, programming, and web technology principles for students looking to build their entry qualifications.</li>
+                </ul>
+                <a asp-page="/Courses/Index" class="btn btn-primary">Browse Computing Courses</a>
+            </article>
+
+            <article class="card">
+                <img src="~/images/image3.jpg" alt="Creative design studio with digital drawing displays" class="card-img" />
+                <h3>2. Department of Art, Design &amp; Media</h3>
+                <p>
+                    The Department of Art, Design &amp; Media forms an internationally connected creative community housed under one roof.
+                    We encourage interdisciplinary exploration, speculative design, and innovative craftsmanship. Our art and design courses
+                    don't just train you in software; they foster alternative ways of thinking, making, communicating, and challenging contemporary culture.
+                </p>
+                <ul>
+                    <li><strong>Core Design Disciplines:</strong> Graphic Design, Interior Architecture and Design, Game Design and Development, Digital Media Production, Product Design (BA &amp; BSc routes), and Jewellery, Materials &amp; Design.</li>
+                    <li><strong>Studio Culture:</strong> Students enjoy personal studio spaces, collaborative critique areas, and daily access to specialized digital fabrication and traditional making workshops.</li>
+                </ul>
+                <a asp-page="/Courses/Index" class="btn btn-primary">Browse Art &amp; Design Courses</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section-block section-alt" aria-labelledby="facilities-overview-heading">
+    <div class="container">
+        <h2 id="facilities-overview-heading">Campus Facilities Overview</h2>
+        <p>
+            The College is located in an attractive, recently refurbished architectural complex featuring light-filled spaces,
+            energy-efficient environmental systems, and cutting-edge digital infrastructure spanning 9,500 m&sup2;.
+        </p>
+        <div class="grid-cards">
+            <article class="card">
+                <h3>High-Performance Computing Laboratories</h3>
+                <p>Specialist labs featuring dual-boot Linux/Windows workstations, dedicated GPU compute nodes for machine learning, data science, and graphics rendering.</p>
+            </article>
+            <article class="card">
+                <h3>Cybersecurity Operations Centre (SOC) &amp; Cyber Range</h3>
+                <p>An isolated, sandboxed networking environment designed for penetration testing, threat hunting, malware analysis, and real-time defense simulations.</p>
+            </article>
+            <article class="card">
+                <h3>Network Engineering Suites</h3>
+                <p>Full-height Cisco enterprise server racks, hardware switches, routers, fiber termination stations, and IoT testbeds.</p>
+            </article>
+            <article class="card">
+                <h3>Creative Design Studios &amp; Digital Media Suites</h3>
+                <p>Spacious, natural-light studios equipped with 27-inch Apple iMacs, Wacom Cintiq interactive pen displays, and full Adobe Creative Cloud suites.</p>
+            </article>
+            <article class="card">
+                <h3>3D Prototyping &amp; Fabrication Workshop</h3>
+                <p>Equipped with multi-material 3D printers, laser cutters, CNC milling machines, vacuum formers, and electronics assembly benches.</p>
+            </article>
+            <article class="card">
+                <h3>Virtual &amp; Augmented Reality (VR/AR) Immersion Lab</h3>
+                <p>Featuring Meta Quest Pro, HTC Vive Focus 3 headsets, high-precision motion capture cameras, and spatial audio testing gear.</p>
+            </article>
+            <article class="card">
+                <h3>Double-Height 300-Seat Lecture Theatre</h3>
+                <p>Equipped with dual 4K laser projection, immersive acoustic treatment, live video streaming, and automated lecture capture systems.</p>
+            </article>
+            <article class="card">
+                <h3>Dramatic Three-Storey Glass Open Atrium</h3>
+                <p>The social heart of the campus, featuring expansive exhibition areas, student showcases, informal breakout seating, and natural daylight.</p>
+            </article>
+            <article class="card">
+                <h3>Collaborative Study Pods &amp; Project Rooms</h3>
+                <p>Bookable student team rooms equipped with 75-inch interactive touchscreens, wireless screen casting, and video conferencing hardware.</p>
+            </article>
+            <article class="card">
+                <h3>Library and Learning Resource Centre (LRC)</h3>
+                <p>Open 24/7 during term time, providing quiet research carrels, extensive digital repository access, bookable pods, and equipment loan services.</p>
+            </article>
+            <article class="card">
+                <h3>The Atrium Cafe &amp; Coffee Lounge</h3>
+                <p>Serving freshly prepared meals, barista coffee, healthy grab-and-go options, and dietary-tailored catering.</p>
+            </article>
+            <article class="card">
+                <h3>Contemporary Art &amp; Design Gallery</h3>
+                <p>A public exhibition space hosting seasonal student degree shows, faculty retrospectives, and guest industry exhibitions.</p>
+            </article>
+            <article class="card">
+                <h3>Accessibility &amp; Inclusive Campus Features</h3>
+                <p>Fully accessible campus with ramped entrances, automatic doors, multi-floor elevators, accessible restrooms on every level, hearing assistance induction loops, and dedicated Blue Badge parking.</p>
+            </article>
+            <article class="card">
+                <h3>Green Travel Hub &amp; Cycle Storage</h3>
+                <p>Secure swipe-card access cycle storage for 120+ bicycles, maintenance stands, tyre inflation points, and individual student lockers and shower facilities.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section-block" aria-labelledby="hours-heading">
+    <div class="container two-col">
+        <article class="card">
+            <h2 id="hours-heading">Campus Opening Hours &amp; Term Dates</h2>
+            <ul>
+                <li><strong>Main Building Opening Hours:</strong> Monday &ndash; Friday: 07:30 &ndash; 22:00 | Saturday &ndash; Sunday: 08:30 &ndash; 18:00</li>
+                <li><strong>Library &amp; Resource Centre Hours:</strong> 24 Hours keycard access 7 days a week during term-time for registered students and staff.</li>
+                <li><strong>Autumn Term 2026/27:</strong> 28 September 2026 &ndash; 18 December 2026 (Reading Week: 02 November &ndash; 06 November 2026)</li>
+                <li><strong>Spring Term 2026/27:</strong> 11 January 2027 &ndash; 26 March 2027 (Reading Week: 15 February &ndash; 19 February 2027)</li>
+                <li><strong>Summer Term 2026/27:</strong> 19 April 2027 &ndash; 25 June 2027 (Assessment &amp; Degree Showcase Period: 17 May &ndash; 11 June 2027)</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>Transport &amp; Travel Guide</h2>
+            <ul>
+                <li><strong>By Train:</strong> Sheffield Central Station is a 12-minute walk from the main entrance, or a 5-minute ride on the Supertram.</li>
+                <li><strong>By Supertram:</strong> Take the Blue or Yellow route to the 'College Square / Arts Quarter' tram stop located directly opposite the campus plaza.</li>
+                <li><strong>By Bus:</strong> Major bus routes 51, 52, 120, and X1 terminate or stop directly outside the Main Entrance on Main Street.</li>
+                <li><strong>By Car:</strong> Easily accessible from the M1 Motorway (Junction 33) via the Sheffield Parkway. Note: On-campus parking is strictly reserved for Blue Badge holders and authorized college visitors. Public parking is available at the adjacent City Gateway Multi-Storey Car Park.</li>
+                <li><strong>By Bicycle:</strong> Located adjacent to National Cycle Route 6. Secure swipe-card indoor bike storage and shower facilities are located on Ground Floor West.</li>
+            </ul>
+        </article>
+    </div>
+</section>

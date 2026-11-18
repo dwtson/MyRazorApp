@@ -1,0 +1,28 @@
+@page "{id:int}"
+@model MyRazorApp.Pages.Courses.DeleteModel
+@{
+    ViewData["Title"] = "Delete Course";
+}
+
+<section class="page-banner">
+    <div class="container">
+        <h1>Delete Course</h1>
+        <p>Confirm removal of this record from the SQLite database.</p>
+    </div>
+</section>
+
+<section class="section-block">
+    <div class="container form-container">
+        <article class="card">
+            <h2>@Model.Course.CourseTitle (@Model.Course.CourseAwardName)</h2>
+            <p><strong>Subject:</strong> @Model.Course.CourseSubject | <strong>Level:</strong> @Model.Course.CourseType</p>
+            <p>@Model.Course.CourseSummary</p>
+
+            <form method="post" class="form-actions">
+                <input type="hidden" asp-for="Course.Id" />
+                <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                <a asp-page="Index" class="btn btn-outline">Cancel</a>
+            </form>
+        </article>
+    </div>
+</section>

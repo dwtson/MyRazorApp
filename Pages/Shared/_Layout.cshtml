@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Kasper College</title>
+    <meta name="description" content="Kasper College Sheffield: Computing, Design, and Networking higher education, enterprise solutions, and student resources." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header id="site-header" class="site-header">
+        <div class="container header-inner">
+            <a class="brand-link" asp-page="/Index" aria-label="Kasper College Home">
+                <img src="~/images/college-logo.png" alt="Kasper College Official Logo" class="brand-logo" />
+                <span class="brand-text">
+                    <strong>Kasper College</strong>
+                    <small>Computing &bull; Design &bull; Networking</small>
+                </span>
+            </a>
+
+            <button type="button"
+                    id="menu-toggle"
+                    class="menu-toggle"
+                    aria-expanded="false"
+                    aria-controls="primary-nav"
+                    aria-label="Toggle navigation menu">
+                Menu
+            </button>
+
+            <nav id="primary-nav" class="primary-nav" aria-label="Primary Navigation">
+                <ul class="nav-list">
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/Courses/Index">Courses</a></li>
+                    <li><a asp-page="/Students">Students</a></li>
+                    <li><a asp-page="/Resources">LRC &amp; Library</a></li>
+                    <li><a asp-page="/Business">Business</a></li>
+                    <li><a asp-page="/Staff">Staff Portal</a></li>
+                    <li><a asp-page="/Contact" class="nav-cta">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="site-main">
+        @RenderBody()
+    </main>
+
+    <footer id="site-footer" class="site-footer">
+        <div class="container footer-grid">
+            <section aria-labelledby="footer-about">
+                <h2 id="footer-about">Kasper College</h2>
+                <p>Where Innovation Meets Craftsmanship. Established in 1989 in Sheffield, United Kingdom.</p>
+                <p><strong>Address:</strong> Main Street, Sheffield, SC4 2BB, UK</p>
+            </section>
+
+            <section aria-labelledby="footer-links">
+                <h2 id="footer-links">Quick Links</h2>
+                <ul>
+                    <li><a asp-page="/Courses/Index">Course Catalogue (2027/28)</a></li>
+                    <li><a asp-page="/Students">Student Support &amp; Union</a></li>
+                    <li><a asp-page="/Resources">Library &amp; Learning Resources</a></li>
+                    <li><a asp-page="/Business">Business &amp; Enterprise</a></li>
+                    <li><a asp-page="/Staff">Staff Information</a></li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="footer-contact">
+                <h2 id="footer-contact">Key Contacts</h2>
+                <ul>
+                    <li>General Switchboard: (01321) 2340 235</li>
+                    <li>Admissions: (01321) 2340 240</li>
+                    <li>Email: <a href="mailto:info@kaspercollege.ac.uk">info@kaspercollege.ac.uk</a></li>
+                    <li>Main Building: Mon–Fri 07:30–22:00 | Sat–Sun 08:30–18:00</li>
+                </ul>
+            </section>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Kasper College, Sheffield. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,78 @@
+@page
+@model ContactModel
+@{
+    ViewData["Title"] = "How to Find Us & Contact";
+}
+
+<section class="page-banner">
+    <div class="container">
+        <h1>How to Find Us &amp; Contact Details</h1>
+        <p>Kasper College is located in central Sheffield, conveniently accessible by train, tram, bus, bicycle, and car.</p>
+    </div>
+</section>
+
+<section class="section-block">
+    <div class="container two-col">
+        <article class="card">
+            <h2>Campus Contact Directory</h2>
+            <ul>
+                <li><strong>Campus Postal Address:</strong> Kasper College, Main Street, Sheffield, SC4 2BB, United Kingdom</li>
+                <li><strong>General Inquiries Switchboard:</strong> Tel: (01321) 2340 235</li>
+                <li><strong>Admissions &amp; Student Recruitment:</strong> Tel: (01321) 2340 240</li>
+                <li><strong>Fax:</strong> (01321) 2340 236</li>
+                <li><strong>General Email:</strong> <a href="mailto:info@kaspercollege.ac.uk">info@kaspercollege.ac.uk</a></li>
+                <li><strong>Admissions Email:</strong> <a href="mailto:admissions@kaspercollege.ac.uk">admissions@kaspercollege.ac.uk</a></li>
+                <li><strong>Business &amp; Enterprise Email:</strong> <a href="mailto:business@kaspercollege.ac.uk">business@kaspercollege.ac.uk</a></li>
+                <li><strong>Student Support Desk Email:</strong> <a href="mailto:studentsupport@kaspercollege.ac.uk">studentsupport@kaspercollege.ac.uk</a></li>
+            </ul>
+
+            <h3>Campus Opening Hours</h3>
+            <ul>
+                <li><strong>Main Building:</strong> Monday &ndash; Friday: 07:30 &ndash; 22:00 | Saturday &ndash; Sunday: 08:30 &ndash; 18:00</li>
+                <li><strong>Library &amp; Resource Centre:</strong> 24 Hours keycard access 7 days a week during term-time.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>Send an Online Inquiry</h2>
+            @if (!string.IsNullOrEmpty(Model.ConfirmationMessage))
+            {
+                <div class="alert-success" role="status" aria-live="polite">
+                    @Model.ConfirmationMessage
+                </div>
+            }
+
+            <form method="post" id="contact-form" class="kasper-form" novalidate>
+                <div class="form-group">
+                    <label for="FullName">Full Name (Required)</label>
+                    <input type="text" id="FullName" name="FullName" placeholder="e.g. Alex Taylor" required />
+                    <span class="field-error" id="error-FullName" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="Email">Email Address (Required)</label>
+                    <input type="email" id="Email" name="Email" placeholder="e.g. alex.taylor@example.com" required />
+                    <span class="field-error" id="error-Email" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="Department">Department</label>
+                    <select id="Department" name="Department">
+                        <option value="Admissions">Admissions &amp; Student Recruitment</option>
+                        <option value="Student Support">Student Support Desk</option>
+                        <option value="Business & Enterprise">Business &amp; Enterprise</option>
+                        <option value="General Inquiries">General Inquiries</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Message">Your Message (Required)</label>
+                    <textarea id="Message" name="Message" rows="4" placeholder="How can Kasper College help you?" required></textarea>
+                    <span class="field-error" id="error-Message" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send Inquiry</button>
+            </form>
+        </article>
+    </div>
+</section>
